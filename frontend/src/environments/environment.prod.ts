@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  api: "http://localhost:3000/api/",
-  serverStaticPath: 'http://localhost:3000/images/products/'
+  api: "https://flower-shop-l4ze.onrender.com/api/",
+  serverStaticPath: 'https://flower-shop-l4ze.onrender.com/images/products/'
 };
