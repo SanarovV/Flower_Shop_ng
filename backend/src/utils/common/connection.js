@@ -14,9 +14,10 @@ class MongoDBConnection {
     }
 
     static connect(result) {
-         mongoose.connect(config.db.dbUrl, {
+        mongoose.connect(config.db.dbUrl, {
             dbName: config.db.dbName,
             useNewUrlParser: true,
+            family: 4
         }).then();
         const db = mongoose.connection;
 
