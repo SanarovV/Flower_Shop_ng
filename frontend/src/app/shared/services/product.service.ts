@@ -1,7 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {environment} from "../../../environments/environment";
+import {map, Observable} from "rxjs";
 import {ProductType} from "../../../types/product.type";
 import {ActiveParamsType} from "../../../types/active-params.type";
 
@@ -10,23 +9,38 @@ import {ActiveParamsType} from "../../../types/active-params.type";
 })
 export class ProductService {
 
-  constructor(private http: HttpClient) { }
-
-  getBestProducts(): Observable<ProductType[]> {
-    return this.http.get<ProductType[]>(environment.api + "products/best");
+  constructor(private http: HttpClient) {
   }
 
-  getProducts(params: ActiveParamsType): Observable<{totalCount: number, pages: number, items: ProductType[]}> {
-    return this.http.get<{totalCount: number, pages: number, items: ProductType[]}>(environment.api + "products", {
-      params: params
-    });
+  getBestProducts(): Observable<ProductType[]> {
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
+      map(products => products.slice(0, 4))
+    );
+  }
+
+  getProducts(params: ActiveParamsType): Observable<{ totalCount: number, pages: number, items: ProductType[] }> {
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
+      map(products => {
+        return {
+          totalCount: products.length,
+          pages: 1,
+          items: products
+        };
+      }));
   }
 
   searchProducts(query: string): Observable<ProductType[]> {
-    return this.http.get<ProductType[]>(environment.api + "products/search?query=" + query);
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
+      map(products => products.filter(p => p.name.toLowerCase().includes(query.toLowerCase())))
+    );
   }
 
   getProduct(url: string): Observable<ProductType> {
-    return this.http.get<ProductType>(environment.api + "products/" + url);
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
+      map(products => {
+        const found = products.find(p => p.name === url);
+        if (!found) throw new Error('Product not found');
+        return found;
+      }));
   }
 }
