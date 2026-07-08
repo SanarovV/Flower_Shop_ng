@@ -28,7 +28,7 @@ export class ProductService {
         }
 
         // 2. Настраиваем параметры пагинации
-        const itemsPerPage = 12; // Сколько карточек должно быть на одной странице
+        const itemsPerPage = 6; // Сколько карточек должно быть на одной странице
         const currentPage = params.page ? +params.page : 1; // Текущая страница (по умолчанию 1)
 
         const totalCount = filteredProducts.length;
