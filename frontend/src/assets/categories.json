@@ -1,0 +1,45 @@
+[
+  {
+    "id": "1",
+    "name": "Комнатные растения",
+    "url": "komnatnye_rasteniya",
+    "types": [
+      { "id": "1-1", "name": "Кактусы", "url": "kaktusy" },
+      { "id": "1-2", "name": "Суккуленты", "url": "sukkulenty" },
+      { "id": "1-3", "name": "Эхеверии", "url": "eheverii" },
+      { "id": "1-4", "name": "Цветущие комнатные растения", "url": "cvetushie_komnatnye_rasteniya" },
+      { "id": "1-5", "name": "Пальмы домашние", "url": "palmy_domashnie" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Флорариумы",
+    "url": "florariumy",
+    "types": [
+      { "id": "2-1", "name": "Маленький", "url": "malenkiy" },
+      { "id": "2-2", "name": "Средний", "url": "sredniy" },
+      { "id": "2-3", "name": "Большой", "url": "bolshoy" }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Сухоцветы",
+    "url": "suhocvety",
+    "types": [
+      { "id": "3-1", "name": "Хлопок", "url": "hlopok" },
+      { "id": "3-2", "name": "Лаванда", "url": "lavanda" },
+      { "id": "3-3", "name": "Букеты", "url": "bukety" }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Кашпо и горшки",
+    "url": "kashpo_i_gorshki",
+    "types": [
+      { "id": "4-1", "name": "Кашпо керамическое", "url": "kashpo_keramicheskoe" },
+      { "id": "4-2", "name": "Кашпо металлическое", "url": "kashpo_metallicheskoe" },
+      { "id": "4-3", "name": "Кашпо бетонное", "url": "kashpo_betonnoe" },
+      { "id": "4-4", "name": "Ваза керамическая", "url": "vaza_keramicheskaya" }
+    ]
+  }
+]
