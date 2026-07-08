@@ -24,7 +24,7 @@ export class ProductService {
         // 1. Фильтруем массив по категории (тип), если она выбрана пользователем
         let filteredProducts = products;
         if (params.types && params.types.length > 0) {
-          filteredProducts = products.filter(p => params.types.includes(p.type));
+          filteredProducts = products.filter(p => params.types.includes(p.type.url));
         }
 
         // 2. Настраиваем параметры пагинации
