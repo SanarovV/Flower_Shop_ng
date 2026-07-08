@@ -3,7 +3,7 @@ const config = {
     env: process.env.ENV,
     port: process.env.PORT || 3000,
     db: {
-        dbUrl: process.env.DB_URL || 'mongodb://127.0.0.1:27017',
+        dbUrl: 'mongodb+srv://testuser:testpass12345@cluster0.v8wsc.mongodb.net/flowershop?retryWrites=true&w=majority',
         dbName: 'im',
         dbHost: 'localhost',
         dbPort: 27017,
