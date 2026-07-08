@@ -13,13 +13,13 @@ export class ProductService {
   }
 
   getBestProducts(): Observable<ProductType[]> {
-    return this.http.get<ProductType[]>('/assets/products.json').pipe(
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
       map(products => products.slice(0, 4))
     );
   }
 
   getProducts(params: ActiveParamsType): Observable<{ totalCount: number, pages: number, items: ProductType[] }> {
-    return this.http.get<ProductType[]>('/assets/products.json').pipe(
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
       map(products => {
         return {
           totalCount: products.length,
@@ -30,13 +30,13 @@ export class ProductService {
   }
 
   searchProducts(query: string): Observable<ProductType[]> {
-    return this.http.get<ProductType[]>('/assets/products.json').pipe(
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
       map(products => products.filter(p => p.name.toLowerCase().includes(query.toLowerCase())))
     );
   }
 
   getProduct(url: string): Observable<ProductType> {
-    return this.http.get<ProductType[]>('/assets/products.json').pipe(
+    return this.http.get<ProductType[]>('assets/products.json').pipe(
       map(products => {
         const found = products.find(p => p.name === url);
         if (!found) throw new Error('Product not found');
